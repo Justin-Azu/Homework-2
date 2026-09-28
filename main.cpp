@@ -1,4 +1,5 @@
 #include <iostream>
+#include "loanCalc.h"
 
 using namespace std;
 
@@ -43,7 +44,8 @@ int main( int argc, char * argv[] )
 	loan_amount = arguments[0];
 	yearly_interest_rate = arguments[1];
 	monthly_payment = arguments[2];
-	cout << loan_amount << " " << yearly_interest_rate << " " << monthly_payment << endl;
+
+	loanCalc(loan_amount, yearly_interest_rate, monthly_payment);
 
 	return 0;
 }
