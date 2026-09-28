@@ -1,10 +1,16 @@
 #modify this makefile so that it will work for this new assignment
 CC = g++
 
-all: 14
+all: loan
 
-14: loanCalc.cpp
-	$(CC) -std=c++11 loan.cpp -o 14
+loan: loan.o main.o
+	$(CC) -std=c++11 loan.o main.o -o a.out
+
+loan.o: loan.cpp
+	$(CC) -std=c++11 -c loan.cpp
+
+main.o: main.cpp
+	$(CC) -std=c++11 -c main.cpp
 
 clean:
-	rm -f 14 *.o
+	rm -f *.o a.out
