@@ -1,15 +1,16 @@
 /* FILE NAME: loanCalc.cpp
+<<<<<<< HEAD
  * AUTHOR: Group 13
+=======
+ * AUTHOR: Group 13, Justin Azunda, KJ Hughley
+>>>>>>> 8f83e4a3f0be6761ddc9943ff604e0d29a5e2022
  * Loan payoff calculator, including interest
  */
 #include <iostream>
 using namespace std;
 
-int main() {
-    double loan;
-    double interestRate;
+void loanCalc(double loan, double interestRate, double monthlyPaid) {
     double interestRateC;
-    double monthlyPaid;
 
     double interest;
     double principal;
@@ -22,58 +23,9 @@ int main() {
     cout.setf(ios::showpoint);
     cout.precision(2);
 
-    do {
-        cout << "\nLoan Amount: ";
-
-        if (!(cin >> loan)) {
-            cout << "WARNING: Invalid loan amount.\n";
-            cin.clear();
-            cin.ignore(10000, '\n');
-            loan = -1;
-        }
-        else if (loan <= 0) {
-            cout << "WARNING: Invalid loan amount.\n";
-        }
-
-    } while (loan <= 0);
-
-    do {
-        cout << "Interest Rate (% per year): ";
-
-        if (!(cin >> interestRate)) {
-            cout << "WARNING: Invalid interest rate.\n";
-            cin.clear();
-            cin.ignore(10000, '\n');
-            interestRate = -1;
-        }
-        else if (interestRate <= 0) {
-            cout << "WARNING: Invalid interest rate.\n";
-        }
-
-    } while (interestRate <= 0);
-
     // GET PROPER INTEREST RATES FOR CALCULATIONS
     interestRate /= 12.0;
     interestRateC = interestRate / 100.0;
-
-    do {
-        cout << "Monthly Payments: ";
-
-        if (!(cin >> monthlyPaid)) {
-            cout << "WARNING: Invalid payment.\n";
-            cin.clear();
-            cin.ignore(10000, '\n');
-            monthlyPaid = -1;
-        }
-        else if (monthlyPaid <= 0) {
-            cout << "WARNING: Invalid payment.\n";
-        }
-        else if (monthlyPaid <= loan * interestRateC) {
-            cout << "WARNING: Payment is too small to ever pay off the loan.\n";
-        }
-
-    } while (monthlyPaid <= 0 ||
-             monthlyPaid <= loan * interestRateC);
 
     cout << endl;
 
@@ -130,6 +82,4 @@ int main() {
          << " months to pay off the loan.\n";
 
     cout << "Total interest paid is: $" << totalInterest << endl << endl;
-
-    return 0;
 }
