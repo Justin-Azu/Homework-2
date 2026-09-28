@@ -1,4 +1,4 @@
-/* FILE NAME: loan.cpp
+/* FILE NAME: loanCalc.cpp
  * AUTHOR: Group 13
  * Loan payoff calculator, including interest
  */
